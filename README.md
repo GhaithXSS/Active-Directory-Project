@@ -428,3 +428,116 @@ We will create an administrative user account for personal use within the Active
 
 By following these steps, you will create a new administrative user account with Domain Admin rights, allowing for enhanced management and administrative capabilities within the Active Directory environment.
 
+**Configuring Routing for Internet Access**
+
+To allow users to access the internet through the server, we will configure routing by installing the Remote Access role.
+
+**Accessing Add Roles and Features:**
+
+1. Open the Server Manager Dashboard.
+2. Click on "Add roles and features" to launch the wizard.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/9a641352-6719-4ea3-9983-ee070065f756)
+
+**Selecting Installation Type:**
+
+3. In the Installation Type section, choose "Role-based or feature-based installation" and click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/618500ad-26ff-4364-83a8-b6ff8951261b)
+
+**Selecting Server:**
+
+4. Select the local server (the server you are configuring) and click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/d4d723f7-a988-49e3-b435-799d59f7c93b)
+
+**Selecting Server Role:**
+
+5. From the list of roles, check the box next to "Remote Access."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/b966a67f-3abf-4085-8752-a58aa4252494)
+
+6. Click "Next."
+
+**Adding Features:**
+
+7. Click "Next" on the Features page to proceed without adding any additional features.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/f1d2f974-2d73-4f68-8ab9-aeaaeca74303)
+
+8. Click "Next" again on the Remote Access page to continue.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/c83239a0-868f-472a-8e4d-9a7c0e4c7553)
+
+**Remote Access Role Services:**
+
+9. Click "Next" on the Role Services page to proceed with the default settings.
+
+**Confirmation and Installation:**
+
+10. Click "Add Features" when prompted to add required features for Remote Access.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/37ba2750-6ea8-4408-bb2c-a23e3c866094)
+
+11. Click "Next" to proceed.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/5efe6f09-d995-4f91-82fb-ef5f435b41ea)
+
+12 .Click "Install" to begin the installation process.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/c0abba42-5d11-440b-a8d0-f2bc39601f4e)
+
+13. Wait for the installation to complete.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/ecc4ab07-ef9a-49da-93a3-59a4075b9cce)
+
+- Installing the Remote Access role prepares the server to handle routing and remote access services, which are essential for providing internet connectivity to users within the network. Once the installation is complete, we will proceed with configuring the routing settings to enable internet access.
+
+**Configuring Routing and Remote Access**
+
+To enable routing and provide internet access to users, we will configure the Routing and Remote Access service.
+
+**Accessing Routing and Remote Access:**
+
+1. Open the Server Manager Dashboard.
+2. Click on "Tools" in the upper-right corner, then select "Routing and Remote Access."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/9ee6ea61-7ae0-4232-9980-6d58100c4ff2)
+
+**Starting the Configuration Wizard:**
+
+3. In the Routing and Remote Access window, right-click on the server name (DC) and select "Configure and Enable Routing and Remote Access."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/2a9aca68-7194-4292-872a-8c0f3e7cc727)
+
+5. The Routing and Remote Access Setup Wizard will pop up. Click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/e6bde9e0-5179-4291-9a8d-ebfd10387a89)
+
+**Choosing Configuration:**
+
+6. Select "Network Address Translation (NAT)" as the configuration option and click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/6b117862-a4ac-443b-a721-80436a1c36fb)
+
+**Selecting Network Adapter:**
+
+7. Choose the appropriate network adapter for the internet connection (labeled as "Internet" earlier).
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/49e77e58-5c96-4951-97dc-d82bfc5995d3)
+
+8. Select the "Internet" adapter and click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/4b933621-f61b-466f-9bf4-731d281b0582)
+
+**Completing the Setup:**
+
+9. Click "Finish" to complete the configuration.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/aebb008b-41e2-4742-ad0d-2610eb11befa)
+
+- By following these steps, you configure the Routing and Remote Access service to use Network Address Translation (NAT), enabling internet access for users on the internal network. This configuration routes traffic from the internal network through the server, providing a secure and manageable gateway to the internet.
+
+
+
+

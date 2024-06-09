@@ -538,6 +538,181 @@ To enable routing and provide internet access to users, we will configure the Ro
 
 - By following these steps, you configure the Routing and Remote Access service to use Network Address Translation (NAT), enabling internet access for users on the internal network. This configuration routes traffic from the internal network through the server, providing a secure and manageable gateway to the internet.
 
+**Installing DHCP Server Role**
+
+To provide dynamic IP addressing to users on the network, we will install and configure the DHCP server role.
+
+**Accessing Add Roles and Features:**
+
+1.Open the Server Manager Dashboard.
+2.Click on "Add roles and features" to launch the wizard.
+
+**Selecting Installation Type:**
+
+3. In the Installation Type section, choose "Role-based or feature-based installation" and click "Next."
+
+**Selecting Server:**
+
+4. Select the local server (the server you are configuring) and click "Next."
+
+**Selecting Server Role:**
+
+5. From the list of roles, check the box next to "DHCP Server."
+6. Click "Next."
+
+**Adding Features:**
+
+7. Click "Next" on the Features page to proceed without adding any additional features.
+8. Click "Next" again on the DHCP Server page to continue.
+
+**Confirmation and Installation:**
+
+9. Click "Install" to begin the installation process.
+10. Wait for the installation to complete.
+11. Once the installation is complete, click "Close" to exit the wizard.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/de4077d5-1371-4f24-8814-b3f722efaa7b)
+
+- By installing the DHCP server role, we prepare the server to dynamically assign IP addresses to clients on the network. The next step will involve configuring the DHCP settings to define the scope and range of IP addresses that will be assigned to users.
+
+**Configuring DHCP**
+
+After installing the DHCP server role, we configure it to provide dynamic IP addressing to users.
+
+**Accessing DHCP Management:**
+
+1. Open the Server Manager Dashboard.
+2. Click on "Tools" in the upper-right corner, then select "DHCP."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/9739a289-eda8-4150-9659-369f76c8e0fd)
+
+3. In the DHCP management console, expand the server name (mydomain.com).
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/fadfaa2c-976a-4058-994b-aec13390fe8d)
+
+**Creating a New Scope:**
+
+4. Right-click on "IPv4" and select "New Scope."
+5. The New Scope Wizard will open. Click "Next" to begin.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/c2523c9f-4cd5-4c3f-9d60-23f33373f93e)
+
+**Naming the Scope:**
+
+6. Provide a name for the scope (e.g., "IP Range 192.168.1.50-192.168.1.200").
+7. Click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/d0b443a9-77db-4554-8a94-ed25349c7a60)
+
+**Configuring IP Address Range:**
+
+8. Enter the starting IP address (192.168.1.50) and the ending IP address (192.168.1.200).
+9. Enter the subnet mask (255.255.255.0).
+10. Click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/037bc9f3-0cbb-4d8a-8a3e-99d00a848970)
+
+**Excluding IP Addresses:**
+
+11. If there are any IP addresses you wish to exclude from the scope, you can configure them here. In this case, we don't exclude any addresses.
+12. Click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/7bdd9f5e-6e64-405b-b2e9-f93cc872343b)
+
+**Setting IP Lease Duration:**
+
+13. Set the IP lease duration. In this case, leave it at the default of 8 days.
+14. Click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/1daad30c-1c4d-43ff-a1e7-3c80392273a4)
+
+**Configuring DHCP Options:**
+
+15. Click "Next" to proceed with configuring the DHCP options.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/c652a902-7e69-491d-bc46-ea7aa5d4a114)
+
+**Adding Default Gateway:**
+
+16. Enter the default gateway, which is the IP address of the Domain Controller (192.168.1.1).
+17. Click "Add," then "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/e1a18cc4-1fce-4302-8674-ee0ae18ccf05)
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/9fe5cb3e-428a-4e85-921d-21de241bb7f5)
+
+**Skipping WINS Server:**
+
+18. Click "Next" to skip configuring a WINS server, as we don't have one.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/1612c068-7d69-442c-b10c-4a3b09de5b68)
+
+**Activating the Scope:**
+
+19. Select "Yes, I want to activate this scope now."
+20. Click "Next," then "Finish."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/950c3737-e4b4-4c8f-8899-f0747d9999be)
+
+**Verifying DHCP Status:**
+
+21. Wait a few moments, and the icon next to "IPv4" should turn green, indicating that everything is working fine.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/519e0bcc-66e6-4203-be52-2e96dd9a95e9)
+
+- By following these steps, you configure the DHCP server to dynamically assign IP addresses to clients on the network, ensuring seamless connectivity and management of network resources.
 
 
+**Adding Users to Active Directory Using a Script**
+
+We will use a PowerShell script to automatically add up to 200 users to Active Directory.
+
+**Downloading the Script:**
+
+1. Download the script file (AD_PS-master.zip).
+2. Extract the contents of the zip file to a folder on your server.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/b28bdf85-95f4-4983-ae72-13f6b48fc4ac)
+
+**Opening PowerShell ISE:**
+
+3. Open the Start menu, search for "Windows PowerShell ISE," right-click, and select "Run as administrator."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/d7135b8d-0d77-4869-a389-2c9cd0e8158c)
+
+**Loading the Script:**
+
+4. In PowerShell ISE, click on "File" > "Open" and navigate to the folder where you extracted the script.
+5. Open the file named Create_Users.ps1.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/b7327752-7924-45d8-a997-cd93cb8dfce4)
+
+**Setting Execution Policy:**
+
+6. In the PowerShell command line at the bottom, set the script execution policy to unrestricted by running the following command:
+
+```Set-ExecutionPolicy Unrestricted```
+
+7. Confirm the change when prompted.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/e49791e3-9f78-466e-9b43-b4fe3fb18ae3)
+
+**Running the Script:**
+
+8. In PowerShell ISE, click on the "Run" button (green arrow) at the top to execute the script.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/8636c749-21d0-46c7-beb4-a71bb2b639d8)
+
+- The script will run and create the users in Active Directory. Watch the output in the PowerShell ISE window to monitor the progress.
+
+**Verifying User Creation:**
+
+9. Once the script finishes executing, close PowerShell ISE.
+10. Open "Active Directory Users and Computers" from the Start menu.
+11. Navigate to the "Users" container.
+12. Verify that the number of users has increased to 323, indicating that the script successfully added the users.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/d5ef4b01-609d-4fd8-a999-3564554e1fe7)
+
+- By following these steps, you efficiently add a large number of users to Active Directory, streamlining the user management process and demonstrating the power of automation with PowerShell scripts.
 

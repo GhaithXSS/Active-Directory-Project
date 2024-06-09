@@ -716,3 +716,181 @@ We will use a PowerShell script to automatically add up to 200 users to Active D
 
 - By following these steps, you efficiently add a large number of users to Active Directory, streamlining the user management process and demonstrating the power of automation with PowerShell scripts.
 
+## Creating a Windows 10 Virtual Machine in VirtualBox ##
+
+In this step, we will create a new virtual machine for Windows 10 in VirtualBox. 
+
+1. Open VirtualBox and click on the "New" button to create a new virtual machine.
+2. Name the VM as Windows 10.
+3. Machine Folder: Assign the VM to the appropriate folder (e.g., D:\VirtualMachine).
+4. Type: Select Microsoft Windows.
+5. Version: Choose Windows 10 (64-bit).
+6. Memory Size: Allocate at least 2048 MB (2 GB) of RAM to the VM. More RAM (e.g., 4 GB) is recommended for better performance.
+7. Allocate 2 CPUs to the VM.
+8. File Location and Size: Set the size to at least 50 GB.
+9. Review the configuration summary to ensure everything is correct:
+- Name: Windows 10
+- Machine Folder: D:\VirtualMachine
+- Type: Microsoft Windows
+- Version: Windows 10 (64-bit)
+- Memory Size: 2048 MB (or more)
+- Processors: 2 CPUs
+- Hard Disk: 50 GB dynamically allocated
+10. Click "Finish" to create the virtual machine.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/9ec87837-8e31-4ece-b41d-58bd5cce86dd)
+
+By following these steps, you create a new Windows 10 virtual machine in VirtualBox, ready for the next steps of installation and configuration.
+
+**Configuring the Network Adapter for the Windows 10 VM**
+
+Before installing Windows 10, we need to configure the network adapter for the virtual machine.
+
+**Accessing VM Settings:**
+
+1. In VirtualBox, select the Windows 10 VM and click on the "Settings" button.
+2. Go to the "Network" tab.
+3. Adapter 1: Ensure that "Enable Network Adapter" is checked.
+4. Attached to: Select Internal Network.
+5. Name: Choose intnet from the drop-down menu.
+6. Click "OK" to save the settings.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/ca0ad048-9fe7-46a1-8888-a4dfb4fdcb7f)
+
+**Installing Windows 10 on the Virtual Machine**
+
+Now, we proceed with the installation of Windows 10 on the configured virtual machine.
+
+**Starting the VM:**
+
+1. Select the Windows 10 VM in VirtualBox and click on the "Start" button.
+2. A message will prompt for a bootable medium.
+3. Click on "Choose a disk file" and navigate to the location of the Windows 10 ISO file.
+4. Select the ISO file and click "Mount."
+5. Click on "Retry" to boot from the mounted ISO.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/24b29ae8-2934-4380-bbb2-07ead2a036ef)
+
+**Beginning Windows 10 Setup:**
+
+6. The Windows 10 setup wizard will start. Select the preferred language, time, and keyboard settings.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/c24ac4d9-77d5-43ec-a2dd-f0aed691594e)
+  
+7. Click "Next," then click on "Install now."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/f7376f5b-345e-4686-97d4-1825f3b04a8b)
+
+8. When prompted for a product key, click "I don't have a product key."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/e1e208de-a455-494b-b67a-5e03acca4c5c)
+
+9. Choose Windows 10 Pro (64-bit) and click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/108a3f2c-2517-43f9-a5e1-36df3b40ee81)
+
+10. Accept the license terms by checking the box and clicking "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/d0b9416c-2798-4128-9215-d94598913565)
+
+11. Select "Custom: Install Windows only (advanced)."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/b50022f8-8f48-4152-bf5d-0d8c504eb1ba)
+
+12 Select the hard drive (unallocated space) and click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/301bbab9-b9a1-4487-aa0d-6f4357baf53b)
+
+-The installation process will begin. This may take several minutes to complete. Once the installation is complete, the VM will reboot automatically.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/8ffc8661-5ee2-4d4f-9aa7-a2a202745a5d)
+
+**Initial Windows 10 Configuration**
+
+After the installation and reboot, perform basic configuration for the network.
+
+
+
+13. On the initial setup screen, choose "Continue with limited setup."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/319c8e44-137c-4723-9a74-33e5988412d2)
+
+
+14.Follow the prompts to complete the basic setup, such as creating a user account and setting up preferences.
+15. After a few minutes, the Windows 10 desktop screen will appear.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/bece25fc-4b39-412f-94c2-2367aeb2215e)
+
+- By following these steps, you will have successfully configured and installed Windows 10 on the virtual machine, ready for further network and Active Directory configuration.
+
+**Installing VirtualBox Guest Additions**
+
+To enhance the performance and user experience of the Windows 10 virtual machine, we need to install VirtualBox Guest Additions.
+
+**Renaming the PC and Joining the Domain**
+
+Next, we will rename the Windows 10 machine to Client1 and add it to the Active Directory domain.
+
+1. Right-click on the Start menu and select "System."
+2. Click on "Rename this PC."
+3. Enter Client1 as the new name and click "Next."
+4. A prompt will ask you to restart the computer. Select "Restart later."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/588b779a-ff83-4451-9520-61c188888775)
+
+**Joining the Domain:**
+
+5. Go back to the "System" window.
+6. Click on "Advanced system settings."
+7. In the System Properties window, go to the "Computer Name" tab and click on "Change."
+8. In the "Computer Name/Domain Changes" window, enter Client1 in the "Computer name" field.
+9. Select the "Domain" option and enter mydomain.com in the "Domain" field.
+10. Click "OK." A prompt will ask for domain credentials.
+11. Enter the administrator username and password.
+12. A message will appear saying "Welcome to the mydomain.com domain."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/77e26ba9-ddad-4b61-957a-082155df9da7)
+
+13. Click "OK" and restart the computer to apply the changes.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/6ffa5467-ff00-4e24-8692-598374f948f2)
+
+**Verifying Domain Configuration**
+
+After the reboot, log in with a domain user and verify the network configuration.
+
+14. On the Windows login screen, click "Other user."
+15. Enter the domain username (ghaith) and password (Password1).
+16. Log in to the system.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/4b2bcc9e-508e-4fcb-ba4c-573b66373a47)
+
+
+**Verifying Network Configuration:**
+
+17. Open Command Prompt (cmd).
+18. Type ipconfig and press Enter.
+19. Verify that the IP address is within the range specified by the DHCP scope (e.g., 192.168.1.50 - 192.168.1.200).
+20. Check that the Default Gateway is set to the IP address of the Domain Controller (e.g., 192.168.1.1).
+21. Type whoami and press Enter.
+22. Verify that the output shows mydomain\ghaith.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/9d9fc1b0-55dc-47de-8c2d-8b7c1e9f1af2)
+
+- By following these steps, you will have successfully installed the VirtualBox Guest Additions, renamed the Windows 10 machine, added it to the Active Directory domain, and verified the configuration. The Windows 10 machine is now integrated into your domain environment, with proper network and user configurations in place.
+
+# Conclusion
+
+**This project has demonstrated the complete setup and configuration of an Active Directory environment using VirtualBox. We successfully installed and configured Windows Server as a Domain Controller and a Windows 10 client, integrating them into a functional domain.**
+
+Throughout the process, we covered essential steps including:
+
+- Setting up VirtualBox and creating virtual machines.
+- Installing Windows Server and configuring Active Directory.
+- Installing Windows 10 and joining it to the domain.
+- Configuring network settings, DHCP, and routing for seamless connectivity.
+- Adding users to the Active Directory using a script for efficiency.
+- Verifying the configurations to ensure proper domain functionality.
+- By following this guide, you have gained hands-on experience in deploying and managing an Active Directory environment. This knowledge is fundamental for IT professionals and system administrators, providing a solid foundation for more advanced network and domain management tasks.
+
+**Thank you for following along, and happy learning!**

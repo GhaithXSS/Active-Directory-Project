@@ -7,6 +7,8 @@ Active Directory (AD) is a directory service developed by Microsoft for Windows 
 
 This repository contains detailed steps and screenshots to guide you through each phase of the project. Whether you are a student, IT professional, or enthusiast, this project will help you understand the fundamentals of Active Directory and how to deploy it effectively.
 
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/76e66c94-a451-498f-b715-d4e0586e80bd)
+
 ## Prerequisites
 **Hardware Requirements:**
 - A computer with at least 8GB of RAM (16GB recommended)

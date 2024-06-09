@@ -359,5 +359,72 @@ Review the configuration settings for the Domain Controller. Click "Next" to pro
 
 - The promotion of the server to a Domain Controller establishes the Active Directory forest and domain structure, enabling centralized authentication, authorization, and directory services within the network environment.
 
+**Creating an Administrative User**
 
+We will create an administrative user account for personal use within the Active Directory environment.
+
+**Opening Active Directory Users and Computers:**
+
+1. Open the Start menu, search for "Active Directory Users and Computers," and launch the application.
+2. Expand the domain (mydomain.com) in the left pane.
+3. Right-click on mydomain.com, then select "New" > "Organizational Unit."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/81139d35-8213-476b-bb6c-c7e291378e81)
+
+4. Name the Organizational Unit "Admins" and click "OK."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/b0090fbe-bad1-49da-9b4c-594f78d845e3)
+
+**Creating a New User:**
+
+1. Right-click on the "Admins" OU, then select "New" > "User."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/59011441-59af-4623-8d86-4fb31f5e6835)
+
+2. Fill in the user credentials:
+- First name: [Your First Name]
+- Last name: [Your Last Name]
+- User logon name: [Your Username]
+3. Click "Next."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/de2fe4fc-23f4-43da-b739-aa52a5d37240)
+
+4. Setting the Password
+5. Enter a password and confirm it.
+6. Check the box for "Password never expires" (since this is for a home project).
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/9f78c0f1-6c1a-44ef-88a0-4e9eb5502545)
+
+7. Click "Next," then "Finish."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/95ccf880-a470-4b72-9918-7429f6bba7ec)
+
+
+**Assigning Domain Admin Rights:**
+
+1. Right-click on the newly created user and select "Properties."
+2. Go to the "Member Of" tab and click "Add."
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/de39afe7-a0b1-40a7-8b4d-5458308bca04)
+
+3. In the "Enter the object names to select" field, type "Domain Admins" and click "Check Names" to verify.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/00f3ee03-8af6-4af3-826e-ce28c1e13fcf)
+
+4. Click "OK," then "OK" again to close the properties window.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/df4f6d4f-5535-4473-9556-eb24e9df07fd)
+
+**Verifying the User:**
+
+1. Log out of the current account.
+2. At the login screen, select "Other user."
+3. Enter the username and password for the new administrative account.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/eb975608-86ab-41e2-aa84-21ded92f1f56)
+
+4. Log in to verify that the new administrative user account has been successfully created and has the appropriate permissions.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/04dbf53c-f4cd-4fc8-9a37-bd23febd8d8a)
+
+By following these steps, you will create a new administrative user account with Domain Admin rights, allowing for enhanced management and administrative capabilities within the Active Directory environment.
 

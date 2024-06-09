@@ -241,7 +241,8 @@ To distinguish between the NAT and Internal network adapters, we navigate to Net
 4. Identifying Adapters: Locate the adapters labeled "Ethernet" and "Ethernet 2." In this case, "Ethernet" corresponds to the NAT adapter, and "Ethernet 2" corresponds to the Internal network adapter.
 
 ![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/cf6ebae4-88a5-4ed6-93c9-f785fd47b375)
-![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/83474a79-62bd-4170-88dd-1a030bfff3af)
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/70b251c4-7f18-4e6d-a59d-c2fdd349604e)
+
 
 **Renaming Network Adapters**
 

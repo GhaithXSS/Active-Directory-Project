@@ -164,11 +164,197 @@ Do not interrupt the installation process to ensure a successful installation of
 
 ![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/16da6c42-26a0-4d30-9170-a9a5a1a99d11)
 
+**Installation Completed**
 
+After the installation of Windows Server is finished, the system will automatically restart.
 
+Post-Installation Setup: Once the system restarts, it begins the process of finalizing the installation and preparing Windows Server for use.Wait for the system to complete the post-installation setup. This may involve configuring system settings, installing drivers, and performing other tasks.
 
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/b7fcb4a6-2514-4802-9e06-fefc2b024c4c)
 
+**Configuring Administrator Password**
 
+Upon restarting and preparing Windows Server for use, you are prompted to set a password for the Administrator account.
+
+1. Password Configuration: Enter a password for the Administrator account. In this example, the password "Password1" is used.
+2. Confirm the password by typing it again in the confirmation field.
+3. Click "Finish" or "OK" to confirm the password and proceed.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/4f7e1967-9a26-46c2-944c-06ce0f2e3278)
+
+**Logging In as Administrator**
+
+After setting the Administrator password, Windows Server prompts for user authentication before accessing the desktop.
+
+1. Press Ctrl + Alt + Delete: To initiate the login process, press Ctrl + Alt + Delete simultaneously.
+2. Login Prompt: Upon pressing Ctrl + Alt + Delete, the login screen appears.
+ 
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/72dedc4d-7648-4443-9442-817dd7450437)
+
+3. Password: Enter the password previously set for the Administrator account ("Password1" in this example).
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/4e2fdb35-2967-47cb-904a-3b95304ddc49)
+
+4. Press Enter or click "Sign In" to authenticate and access the Windows Server desktop.
+Logging in with the Administrator account grants full access to the system, allowing for further configuration and management tasks.
+
+**Windows Server Manager Dashboard**
+
+After successfully logging in, the Windows Server Manager Dashboard automatically appears, providing an overview of server status and management tools.
+- Windows Server Manager: The dashboard displays various management options and server status information.
+Leave the Server Manager dashboard open for now. We will proceed to install VirtualBox Guest Additions to enhance the virtual machine's performance and functionality.
+- The Server Manager Dashboard serves as a central hub for managing server roles, features, and configurations in Windows Server environments.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/e3b5a08f-ab2f-4b10-8342-566bf2b43b45)
+
+**Installing VirtualBox Guest Additions**
+
+1. Accessing Guest Additions: Click on the "Devices" menu at the top of the VirtualBox window.
+2. Inserting Guest Additions CD: From the "Devices" menu, select "Insert Guest Additions CD Image."
+3. Open Explorer: Navigate to "This PC" or "Computer" on the Windows Server desktop.
+4. Locating VirtualBox Guest Additions: Open the CD drive labeled "VBoxGuestAdditions" to access the Guest Additions installer.
+5. Initiating Installation: Double-click on the "VBoxWindowsAdditions" executable to start the installation process.
+6. Performing Basic Setup: Follow the on-screen prompts to complete the installation by clicking "Next," "Next," and "Install."
+- Installing VirtualBox Guest Additions provides additional features such as better graphics support, shared folders, and seamless mouse integration between the host and guest operating systems.
+  
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/fe790528-a1b5-4980-876c-025b6466a364)
+
+**Renaming the PC to DC**
+
+To facilitate better management and identification, we rename the Windows Server virtual machine to "DC," signifying its role as a Domain Controller.
+
+1. Accessing System Properties: Right-click on the Start button to open the context menu, then select "System."
+2. Renaming the PC: In the System window, click on the "Rename this PC" button.
+3. Enter New Name: In the "Computer Name" tab of the System Properties window, type "DC" as the new name for the virtual machine.
+4. Click "OK" to save the changes and close the System Properties window.
+- Renaming the PC to "DC" helps identify its role as a Domain Controller within the Active Directory environment, simplifying management and administration tasks.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/b6583f2e-83e9-4915-9f1c-825565190cad)
+
+**Identifying Network Adapters**
+
+To distinguish between the NAT and Internal network adapters, we navigate to Network Connections in the Control Panel.
+
+1. Accessing Network Connections: Open Control Panel by searching for it in the Start menu or right-clicking on the Start button and selecting "Control Panel."
+2. Navigating to Network Connections: In Control Panel, go to "Network and Internet" and then click on "Network Connections."
+3. Viewing Adapter Options: In the Network Connections window, you will see a list of network adapters installed on the system.
+4. Identifying Adapters: Locate the adapters labeled "Ethernet" and "Ethernet 2." In this case, "Ethernet" corresponds to the NAT adapter, and "Ethernet 2" corresponds to the Internal network adapter.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/cf6ebae4-88a5-4ed6-93c9-f785fd47b375)
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/83474a79-62bd-4170-88dd-1a030bfff3af)
+
+**Renaming Network Adapters**
+
+To enhance clarity and management, we rename the network adapters accordingly.
+
+**Renaming Ethernet Adapter:**
+1. Right-click on the adapter labeled "Ethernet" and select "Rename."
+2. Change the name to "Internal" to signify its connection to the internal network.
+**Renaming Ethernet 2 Adapter:**
+1. Right-click on the adapter labeled "Ethernet 2" and select "Rename."
+2. Change the name to "External" to denote its connection to external networks, such as the internet.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/b9a9fe17-a54c-4b1a-bb0a-2cfc18506a6e)
+
+**Configuring LAN IP Address**
+
+**Accessing Adapter Properties:**
+
+1. Right-click on the adapter labeled "Internal" and select "Properties."
+2. Selecting Internet Protocol Version 4 (TCP/IPv4):
+3. Locate "Internet Protocol Version 4 (TCP/IPv4)" in the list of items and select it.
+4. Click on the "Properties" button.
+**Configuring IP Address:**
+1. Select "Use the following IP address" and enter the following details:
+2. IP Address: 192.168.1.1
+3. Subnet Mask: 255.255.255.0
+4. Click "OK" to apply the changes and close the properties window.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/bceeadf6-5a8c-4aa8-8fc4-c559511e69d7)
+
+**Installing Active Directory Domain Services**
+
+**Accessing Add Roles and Features:**
+1. Return to the Server Manager Dashboard.
+2. Click on "Add roles and features" to launch the wizard.
+3. Selecting Role-Based or Feature-Based Installation:
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/74f4860b-6905-4cb4-9615-34e7b17174da)
+
+4. In the Installation Type section, choose "Role-based or feature-based installation" and click "Next."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/994c445c-04e4-45df-8686-5e80b99f4d86)
+
+**Selecting Server:**
+
+1. Choose the local server (in this case, there should be only one server listed) and click "Next."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/856693a7-0beb-4dbe-b5a9-0ace293aedd2)
+
+**Selecting Role:**
+
+1. In the Server Roles section, check the box next to "Active Directory Domain Services."
+
+**Adding Features:**
+
+1. Click on "Add Features" when prompted to add required features.
+
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/a939deda-f529-420d-bc08-46e0acdf1136)
+
+**Confirming Installation:**
+
+Review the information on the Active Directory Domain Services page, then click "Next."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/04479a3f-b2da-47a1-ab0d-a83e8213df85)
+
+**Installation:**
+
+1. Click "Install" to begin the installation process.
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/e4aff721-5e99-4446-b751-c1f2d67dd013)
+
+**Waiting for Installation:**
+
+1.Wait for the installation to complete. The progress will be displayed on the screen.
+
+- The installation of Active Directory Domain Services is a crucial step in configuring the server as a Domain Controller. It establishes the foundation for managing users, groups, and other directory objects within the Active Directory environment.
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/5774b6c4-6fba-4385-b1a4-7f6b4d280fc6)
+
+**Promoting the Server to Domain Controller**
+
+**Accessing Promotion Wizard:**
+1. In the Server Manager Dashboard, a notification will appear prompting to promote the server to a Domain Controller. Click on "Promote this server to a domain controller."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/c845031b-2dc1-4e4f-92ef-f58be221af5a)
+
+**Choosing Deployment Configuration:**
+
+1. Select "Add a new forest" since this is the initial deployment of Active Directory in our environment. Click "Next."
+**Specifying Domain Name:**
+
+1. Enter the root domain name for the forest. In this case, we enter "mydomain.com" as the domain name. Click "Next."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/e2e24d00-e571-4033-a139-6d718b8776b7)
+
+**Setting Directory Services Restore Mode Password:**
+
+Specify a Directory Services Restore Mode (DSRM) password for the Directory Services Restore Mode Administrator account. Enter the previously set Administrator password and click "Next."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/223834e6-6384-4f62-932c-86f52e3239a5)
+
+**Choosing NetBIOS Name:**
+
+The wizard suggests a NetBIOS name based on the domain name. Accept the suggested NetBIOS name or specify a different one if needed. Click "Next."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/300500d3-43e2-45ac-907b-a9cc465686c9)
+
+**Paths:**
+
+Review the default paths for the Active Directory database, log files, and SYSVOL folder. Click "Next."
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/7403ca15-777a-4c74-a195-f01d00875400)
+
+**Review:**
+
+Review the configuration settings for the Domain Controller. Click "Next" to proceed.
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/1d4753bd-768e-4115-843a-ca0bb408c4e8)
+
+**Installation:**
+
+1. Click "Install" to begin the promotion process.
+![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/80e0aed4-df8c-4ce3-ad4d-bfdd2bbf2712)
+
+- The promotion of the server to a Domain Controller establishes the Active Directory forest and domain structure, enabling centralized authentication, authorization, and directory services within the network environment.
 
 
 

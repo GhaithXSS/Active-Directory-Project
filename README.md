@@ -869,10 +869,10 @@ After the reboot, log in with a domain user and verify the network configuration
 **Verifying Network Configuration:**
 
 17. Open Command Prompt (cmd).
-18. Type ipconfig and press Enter.
+18. Type  ```ipconfig ``` and press Enter.
 19. Verify that the IP address is within the range specified by the DHCP scope (e.g., 192.168.1.50 - 192.168.1.200).
 20. Check that the Default Gateway is set to the IP address of the Domain Controller (e.g., 192.168.1.1).
-21. Type whoami and press Enter.
+21. Type  ```whoami ``` and press Enter.
 22. Verify that the output shows mydomain\ghaith.
 
 ![image](https://github.com/GhaithXSS/Active-Directory-Project/assets/172057297/9d9fc1b0-55dc-47de-8c2d-8b7c1e9f1af2)
